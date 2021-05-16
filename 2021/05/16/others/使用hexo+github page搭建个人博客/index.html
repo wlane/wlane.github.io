@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		使用hexo+github page搭建个人博客 | 
+	 
+	just write something
+	</title>
+	
+	<!-- keywords,description -->
+	 
+		<meta name="description" content="Everything negative - pressure, challenges - is all an opportunity for me to rise." />
+	
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "wujun234.github.io";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+
+	
+	
+		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3efe99c287df5a1d6f0d02d187e403c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<header id="header">
+    <a id="title" href="/" class="logo">just write something</a>
+
+	<ul id="menu">
+		<li class="menu-item">
+			<a href="/about" class="menu-item-link">ABOUT</a>
+		</li>
+	
+		<li class="menu-item">
+			<a href="/tags" class="menu-item-link">标签</a>
+		</li>
+	
+
+	
+		<li class="menu-item">
+			<a href="/categories" class="menu-item-link">分类</a>
+		</li>
+	
+
+		<li class="menu-item">
+			<a href="https://github.com/wujun234/uid-generator-spring-boot-starter" class="menu-item-link" target="_blank">
+				UidGenerator
+			</a>
+		</li>
+		<li class="menu-item">
+			<a href="https://github.com/wujun234" class="menu-item-link" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+		</li>
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										docker
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/05/16/docker/windows%E4%B8%8A%E5%AE%89%E8%A3%85docker/">
+										windows上安装docker
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										k8s
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2018/04/06/k8s/k8s%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86/">
+										k8s核心原理
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										os
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										windows
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/05/16/os/windows/windows%E4%B8%8A%E5%BC%80%E5%90%AFwsl/">
+										windows上开启wsl
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										others
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2019/09/14/others/%E4%BA%91%E5%8D%97%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">
+										云南旅游攻略
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2021/05/16/others/%E4%BD%BF%E7%94%A8hexo+github%20page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+										使用hexo+github page搭建个人博客
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+
+	使用hexo+github page搭建个人博客
+</h1>
+<div class="article-meta">
+	
+	<span>Figo Xue</span>
+	<span>2021-05-16 18:36:41</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/blog/">blog</a>
+                        </i>
+                      
+                    </span>
+                
+            
+    
+
+    
+		<span>Tags：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/hexo/">hexo</a>
+                        </i>
+                    </span>
+                
+            
+    
+		</div>
+
+</div>
+
+<div id="article-content">
+	<p>可以和github一起使用的静态网页模板系统有很多，比如：</p>
+<p>1、基于ruby的Jekyll;</p>
+<p>2、基于nodejs的Hexo；</p>
+<p>3、基于go的Hugo；</p>
+<p>4、基于python的Pelican；</p>
+<p>5、操作最简单的Gridea。</p>
+<p>这里面之所以选择Hexo，是因为官方推荐的Jekyll速度感人，而Gridea不适用于多终端，所以就采用了比较火的hexo，其他的暂时还没有用过。</p>
+<h2 id="1、创建github仓库"><a href="#1、创建github仓库" class="headerlink" title="1、创建github仓库"></a>1、创建github仓库</h2><p>此步骤略，主要包括创建一个后缀名为.github.io的仓库，并且在有私有域名的情况下设置自定义域名，如下图：</p>
+<img src="/2021/05/16/others/%E4%BD%BF%E7%94%A8hexo+github%20page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20210504224819313.png" class="">
+
+<p>注意：需要在私有域名的DNS记录中添加两条CNAME记录</p>
+<h2 id="2、初始化hexo环境"><a href="#2、初始化hexo环境" class="headerlink" title="2、初始化hexo环境"></a>2、初始化hexo环境</h2><p>这里前置条件为，必须存在git和nodejs环境，安装步骤略，如下：</p>
+<img src="/2021/05/16/others/%E4%BD%BF%E7%94%A8hexo+github%20page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20210504225338071.png" class="">
+
+<p>首先需要安装hexo：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -g hexo-cli</span></span><br></pre></td></tr></table></figure>
+
+<p>初始化操作目录：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">pwd</span></span></span><br><span class="line">/e/github/</span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo init blog</span></span><br></pre></td></tr></table></figure>
+
+<p>此时，会生成一个blog目录，加入blog目录，安装所需依赖：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> blog</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br></pre></td></tr></table></figure>
+
+<p>此时一切正常情况下，可以运行系列命令查看预览效果：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo s</span></span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+
+<p>在浏览器使用地址 <a target="_blank" rel="noopener" href="http://localhost/">http://localhost</a>:4000 访问，可以看到默认的预览效果。</p>
+<h2 id="3、关联到github"><a href="#3、关联到github" class="headerlink" title="3、关联到github"></a>3、关联到github</h2><p>首先设置github使用当前用户的ssh key来连接github仓库，这里步骤略。</p>
+<p>然后配置hexo：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vi _config.yml</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Deployment</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># Docs: https://hexo.io/docs/deployment.html</span></span></span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:wlane/wlane.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>再然后安装部署插件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-deployer-git --save</span></span><br></pre></td></tr></table></figure>
+
+<p>定义私有域名文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vi <span class="built_in">source</span>/CNAME</span></span><br><span class="line">www.xwangwang.com</span><br></pre></td></tr></table></figure>
+
+<p>部署命令，以后每次修改文档，都需要运行此命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo d -g</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4、主题设置"><a href="#4、主题设置" class="headerlink" title="4、主题设置"></a>4、主题设置</h2><p>hexo的主题可以查看：<a target="_blank" rel="noopener" href="https://hexo.io/themes">https://hexo.io/themes</a> 来选择，我这里用过很多种，最近发现了Tree这个主题，比较符合我想要的风格，这里就以此为例来说明。</p>
+<p>Tree主题github地址： <a target="_blank" rel="noopener" href="https://github.com/wujun234/hexo-theme-tree">https://github.com/wujun234/hexo-theme-tree</a> </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">pwd</span></span></span><br><span class="line">/e/github/blog</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/wujun234/hexo-theme-tree.git  themes/tree</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> vi _config.yml</span></span><br><span class="line">theme: tree</span><br></pre></td></tr></table></figure>
+
+<p>其他具体设置可以查看此主题github页面上的说明。</p>
+<h2 id="5、同步仓库"><a href="#5、同步仓库" class="headerlink" title="5、同步仓库"></a>5、同步仓库</h2><p>为保证在其他终端上也可以使用该配置，需要将此目录同步到仓库中，以便在其他终端上也可以随时使用。</p>
+<p>首先在github上创建仓库：</p>
+<img src="/2021/05/16/others/%E4%BD%BF%E7%94%A8hexo+github%20page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20210505000416283.png" class="">
+
+<p>然后将blog目录下原有的仓库信息文件全部删除，也就是删除.git开头的那些文件，只保留：</p>
+<img src="/2021/05/16/others/%E4%BD%BF%E7%94%A8hexo+github%20page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20210505000554790.png" class="">
+
+<p>接下来同步仓库：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">pwd</span></span></span><br><span class="line">/e/github/blog</span><br><span class="line"><span class="meta">$</span><span class="bash"> git init .</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add .</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">&quot;init&quot;</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote add origin git@github.com:wlane/blog-hexo.git</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git push -u origin master</span></span><br></pre></td></tr></table></figure>
+
+<p>最终可以看到仓库内容就是本地生成的目录内容：</p>
+<img src="/2021/05/16/others/%E4%BD%BF%E7%94%A8hexo+github%20page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20210505001730102.png" class="">
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2021/05/16/os/windows/windows%E4%B8%8A%E5%BC%80%E5%90%AFwsl/">
+                windows
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+
+<script>
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©2019-<span id="footerYear"></span> 
+	<a href="/">Figo Xue</a> 
+	
+	
+		|
+		<span id="busuanzi_container_site_pv">
+			pv
+			<span id="busuanzi_value_site_pv"></span>
+		</span>
+		|
+		<span id="busuanzi_container_site_uv"> 
+			uv
+			<span id="busuanzi_value_site_uv"></span>
+		</span>
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+<script type="text/javascript"> 
+	document.getElementById('footerYear').innerHTML = new Date().getFullYear() + '';
+</script>
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>

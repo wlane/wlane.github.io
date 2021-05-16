@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		k8s核心原理 | 
+	 
+	just write something
+	</title>
+	
+	<!-- keywords,description -->
+	 
+		<meta name="description" content="Everything negative - pressure, challenges - is all an opportunity for me to rise." />
+	
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "wujun234.github.io";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+
+	
+	
+		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3efe99c287df5a1d6f0d02d187e403c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<header id="header">
+    <a id="title" href="/" class="logo">just write something</a>
+
+	<ul id="menu">
+		<li class="menu-item">
+			<a href="/about" class="menu-item-link">ABOUT</a>
+		</li>
+	
+		<li class="menu-item">
+			<a href="/tags" class="menu-item-link">标签</a>
+		</li>
+	
+
+	
+		<li class="menu-item">
+			<a href="/categories" class="menu-item-link">分类</a>
+		</li>
+	
+
+		<li class="menu-item">
+			<a href="https://github.com/wujun234/uid-generator-spring-boot-starter" class="menu-item-link" target="_blank">
+				UidGenerator
+			</a>
+		</li>
+		<li class="menu-item">
+			<a href="https://github.com/wujun234" class="menu-item-link" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+		</li>
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										docker
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/05/16/docker/windows%E4%B8%8A%E5%AE%89%E8%A3%85docker/">
+										windows上安装docker
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										k8s
+									</a>
+									
+							<ul>
+								<li class="file active">
+									<a href="/2018/04/06/k8s/k8s%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86/">
+										k8s核心原理
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										os
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										windows
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/05/16/os/windows/windows%E4%B8%8A%E5%BC%80%E5%90%AFwsl/">
+										windows上开启wsl
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										others
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2019/09/14/others/%E4%BA%91%E5%8D%97%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">
+										云南旅游攻略
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/05/16/others/%E4%BD%BF%E7%94%A8hexo+github%20page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+										使用hexo+github page搭建个人博客
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+
+	k8s核心原理
+</h1>
+<div class="article-meta">
+	
+	<span>Figo Xue</span>
+	<span>2018-04-06 14:02:39</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/读书笔记/">读书笔记</a>
+                        </i>
+                      
+                    </span>
+                
+            
+    
+
+    
+		<span>Tags：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/k8s/">k8s</a>
+                        </i>
+                    </span>
+                
+            
+    
+		</div>
+
+</div>
+
+<div id="article-content">
+	<p>《kubernetes权威指南》第一版</p>
+<h1 id="kubernetes结构图"><a href="#kubernetes结构图" class="headerlink" title="kubernetes结构图"></a>kubernetes结构图</h1><span id="more"></span>
+
+
+<img src="/2018/04/06/k8s/k8s%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86/k8s-arch.jpg" class="" title="k8s结构图">
+
+<p>主要分为五个部分：apiserver，controller manager，scheduler，安全机制和网络原理，如下图：</p>
+<img src="/2018/04/06/k8s/k8s%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86/k8s-principle.jpg" class="" title="k8s核心原理">
+
+
+<h2 id="apiserver"><a href="#apiserver" class="headerlink" title="apiserver"></a>apiserver</h2><hr>
+<p>1.如何访问k8s的api</p>
+<p>　　通过编程方式访问<br>　　通过curl命令访问<br>　　通过命令行工具kubectl访问</p>
+<p>2.通过API Server 访问Node、Pod、Service</p>
+<p>　　/api/v1/proxy/nodes/{name}/*</p>
+<p>3.集群功能模块之间的通信</p>
+<p>　　集群内的功能模块通过API Server将信息存入etcd，其他模块通过API Server读取这些信息，从而实现模块之间的交互</p>
+<h2 id="controller-manager"><a href="#controller-manager" class="headerlink" title="controller manager"></a>controller manager</h2><hr>
+<p>1.Replication Controller</p>
+<p>　　确保任何时刻一个RC关联的Pod都能保持一定数量的Pod副本处于正常运行状态，实现自动创建、补足、替换、删除Pod副本<br>　　常用使用模式：<br>　　(1)重新调度<br>　　(2)弹性伸缩<br>　　(3)滚动更新  ***</p>
+<p>2.Node Controller</p>
+<p>　　发现、管理和监控集群中的各个Node节点，kublet启动时通过API Server将节点信息写入etcd</p>
+<p>3.ResourceQuota Controller</p>
+<p>　　负责实现k8s的资源配额管理，通过两种准入控制机制（Admission Control）来实现，LimitRanger作用于Pod和Container上，ResourceQuota作用于Namaspace上</p>
+<p>4.Namespace Controller</p>
+<p>　　定时通过API Server从etcd中读取Namespace信息并对Namespace做相应处理</p>
+<p>5.ServiceAccount Controller与Token Controller</p>
+<p>　　ServiceAccount Controller在Controller Manager启动时被创建，监听Service Account的删除和Namespace的创建、修改事件<br>　　Token Controller监听Service Account和Secret的创建、修改和删除事件</p>
+<p>6.Service Controller与 Endpoint Controller</p>
+<p>　　什么是Service（微服务）<br>　　Service如何访问到后端的Pod（Endpoint）<br>　　如何找到Service（内部访问方式（虚拟ip+端口），外部访问方式（Nodeport，LoadBalancer，ingress））<br>　　Service Controller监控Service的变化，Endpoint Controller监控Service和Pod的变化</p>
+<h2 id="Scheduler"><a href="#Scheduler" class="headerlink" title="Scheduler"></a>Scheduler</h2><hr>
+<p>将待调度的Pod按照特定的调度算法和调度策略绑定集群中的某个合适的Node上，并将绑定信息写入到etcd中，接下来kubelet获取到Pod绑定事件，生成具体的Pod</p>
+<p>1.预选调度过程（预选策略）</p>
+<p>　　（1）NoDiskConfilct<br>　　（2）PodFitsResource<br>　　（3）PodSelectorMatches<br>　　（4）PodFitsHost<br>　　（5）CheckNodeLabelPresence<br>　　（6）CheckServiceAffinity<br>　　（7）PodFitsPorts</p>
+<p>2.确定最优节点（优选策略）</p>
+<p>　　（1）LeastRequestedPriority<br>　　（2）CalculateNodeLabelPriority<br>　　（3）BalancedResourceAllocation</p>
+<h2 id="安全机制"><a href="#安全机制" class="headerlink" title="安全机制"></a>安全机制</h2><hr>
+<p>1.Authentication认证</p>
+<p>　　API的调用使用CA、Token和HTTP Base方式实现用户认证</p>
+<p>2.Authorization授权</p>
+<p>　　授权是认证后的独立步骤，用于API Server主要端口的所有http访问，有三种模式：<br>　　（1）AlwaysDeny<br>　　（2）AlwaysAllow<br>　　（3）ABAC</p>
+<p>3.Admission Control准入控制</p>
+<p>　　用于拦截所有经过认证和鉴权后的访问API Server请求的可插入代码（或插件），参考ResourceQuota Controller</p>
+<p>4.Secret私密凭据</p>
+<p>　　保管私密数据，比如密码、OAuthTokens、SSH Keys等信息<br>　　三种类型：<br>　　（1）Opaque<br>　　（2）Dockercfg<br>　　（3）ServiceAccount<br>　　三种使用方式：<br>　　（1）创建Pod时，通过为Pod指定Service Account来自动使用该Secret<br>　　（2）通过挂载该Secret到Pod来使用它<br>　　（3）创建Pod时，指定Pod的spc.ImagePullSecrets来引用它</p>
+<p>5.Service Account</p>
+<p>　　多个Secret的集合，包含两类Secret：<br>　　（1）普通Secret，用于访问API Server<br>　　（2）imagePullSecret，用于下载容器镜像<br>　　会一起工作的功能模块：<br>　　（1）Admission Controller<br>　　（2）Token Controller<br>　　（3）Service Account Controller</p>
+<h2 id="网络原理"><a href="#网络原理" class="headerlink" title="网络原理"></a>网络原理</h2><hr>
+<p>1.K8s网络模型</p>
+<p>　　基础原则：每个Pod都有一个独立的ip地址，而且假定所有的Pod都在一个可以直连、偏平的网络空间，不管Pod是否在同一个Node中，都要求能通过对方的ip直接进行访问（IP_per_Pod）<br>　　要求：<br>　　（1）所有容器都可以在不用NAT的方式下和别的容器通信<br>　　（2）所有节点都可以在不用NAT的方式同所有容器通信，反之亦然<br>　　（3）容器的地址和别人看到的地址是同一个地址</p>
+<p>2.Docker的网络基础</p>
+<p>　　2.1.网络名称空间<br>　　　　独立的网络协议栈被隔离到不同的命名空间中后形成了网络命名空间，不同的网络命名空间互相是隔离的，彼此无法通信<br>　　2.2.Veth设备对<br>　　　　利用它可以直接将两个网络命名空间连接起来，在不用的网络命名空间之间进行通信<br>　　2.3.网桥<br>　　　　提供了网络设备之间互相转发数据的二层设备，linux网桥既可以看做一个二层，也可以看做一个三层设备<br>　　2.4.iptables/Netfilter<br>　　　　实现用户自定义数据包的处理<br>　　2.5.路由<br>　　　　在IP层决定数据的发送和转发</p>
+<p>3.Docker的网络实现</p>
+<p>　　Docker支持的4类网络模式：<br>　　（1）host模式<br>　　（2）container模式<br>　　（3）none模式<br>　　（4）bridge模式，也是k8s管理模式下通常使用的模式<br>　　问题：<br>　　在bridge模式下，同一台机器内的容器之间可以相互通信，不同主机上的容器不能够相互通信，甚至可能有相同的网络地址段，因此为了跨节点相互通信，必须通过主机端口来代理，这种做法意味着在要协调好不同容器的代理端口的分配，再加上服务注册发现等机制也十分困难</p>
+<p>4.k8s的网络实现</p>
+<p>　　4.1.容器到容器的通信<br>　　　　在同一Pod内的容器（不用Pod内的容器不直接访问）共享同一个网络命名空间，可以直接访问<br>　　4.2.Pod之间的通信<br>　　　　（1）同一个Node上<br>　　　　关联在同一个Docker0网桥上，是可以直接通信的<br>　　　　（2）不同Node之间<br>　　　　需要额外的网络配置，谷歌的GCE环境和部分公有云都支持，私有云使用一些开源组件<br>　　4.3.Pod到Service之间的通信<br>　　　　Service是一组Pod的抽象，真正将Service作用落实的是背后的kube-proxy进程。每个Node上面都有一个kube-proxy进程，可看作是Service的透明代理和负载均衡器，他会将某个Service的访问请求转发到后端的多个Pod实例上<br>　　　　访问Service的请求，不论是用Cluster IP+TargetPort的方式还是用节点机IP+NodePort的方式，都被节点机的Iptables规则重定向到kube-proxy监听Service服务代理端口<br>　　4.4.外部到内部的访问<br>　　　　主要有三种<br>　　　　（1）外部没有负载均衡器，直接通过访问内部的负载均衡器来访问Pod（NodePort）<br>　　　　（2）外面有负载均衡器，通过外部负载均衡器直接访问内部的Pod（LoadBalance）<br>　　　　（3）ingress</p>
+<p>5.开源网络组件</p>
+<p>　　（1）Flannel<br>　　（2）Open vSwitch<br>　　（3）直接路由</p>
+
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2019/09/14/others/%E4%BA%91%E5%8D%97%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  云南旅游攻略
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+        </div>
+    </div>
+
+
+
+
+<script>
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©2019-<span id="footerYear"></span> 
+	<a href="/">Figo Xue</a> 
+	
+	
+		|
+		<span id="busuanzi_container_site_pv">
+			pv
+			<span id="busuanzi_value_site_pv"></span>
+		</span>
+		|
+		<span id="busuanzi_container_site_uv"> 
+			uv
+			<span id="busuanzi_value_site_uv"></span>
+		</span>
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+<script type="text/javascript"> 
+	document.getElementById('footerYear').innerHTML = new Date().getFullYear() + '';
+</script>
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
