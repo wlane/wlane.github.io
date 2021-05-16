@@ -289,11 +289,11 @@ var _hmt = _hmt || [];
 <img src="/2021/05/16/others/%E4%BD%BF%E7%94%A8hexo+github%20page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20210504224819313.png" class="">
 
 <p>注意：需要在私有域名的DNS记录中添加两条CNAME记录</p>
-<h2 id="2、初始化hexo环境"><a href="#2、初始化hexo环境" class="headerlink" title="2、初始化hexo环境"></a>2、初始化hexo环境</h2><p>这里前置条件为，必须存在git和nodejs环境，安装步骤略，如下：</p>
+<h2 id="2、初始化hexo环境"><a href="#2、初始化hexo环境" class="headerlink" title="2、初始化hexo环境"></a>2、初始化hexo环境</h2><p>这里前置条件为，必须存在git和nodejs(v12.22.1),npm(7.12.0)环境，安装步骤略，如下：</p>
 <img src="/2021/05/16/others/%E4%BD%BF%E7%94%A8hexo+github%20page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20210504225338071.png" class="">
 
-<p>首先需要安装hexo：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -g hexo-cli</span></span><br></pre></td></tr></table></figure>
+<p>首先需要安装hexo，指定版本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -g hexo-cli@4.2.0</span></span><br></pre></td></tr></table></figure>
 
 <p>初始化操作目录：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">pwd</span></span></span><br><span class="line">/e/github/</span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo init blog</span></span><br></pre></td></tr></table></figure>
@@ -327,14 +327,35 @@ var _hmt = _hmt || [];
 <p>首先在github上创建仓库：</p>
 <img src="/2021/05/16/others/%E4%BD%BF%E7%94%A8hexo+github%20page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20210505000416283.png" class="">
 
-<p>然后将blog目录下原有的仓库信息文件全部删除，也就是删除.git开头的那些文件，只保留：</p>
-<img src="/2021/05/16/others/%E4%BD%BF%E7%94%A8hexo+github%20page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20210505000554790.png" class="">
+<p>然后回到本地目录，由于有些主题是直接git clone下来的，会存在仓库信息，我们需要将将themes目录下主题目录内的git信息删除，也就是删除.git开头的那些文件，比如以tree主题为例，只保留这些文件：</p>
+<img src="/2021/05/16/others/%E4%BD%BF%E7%94%A8hexo+github%20page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20210516190913873.png" class="">
+
+<p>然后清除部署信息：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo clean</span></span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Deleted database.</span><br><span class="line">INFO  Deleted public folder.</span><br><span class="line"><span class="meta">$</span><span class="bash"> rm -rf .deploy_git</span></span><br></pre></td></tr></table></figure>
+
+<p>然后再增加.gitignore文件，内容如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat .gitignore</span></span><br><span class="line">.*</span><br><span class="line">db.json</span><br><span class="line">public/*</span><br><span class="line"></span><br><span class="line">!.gitignore</span><br></pre></td></tr></table></figure>
 
 <p>接下来同步仓库：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">pwd</span></span></span><br><span class="line">/e/github/blog</span><br><span class="line"><span class="meta">$</span><span class="bash"> git init .</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add .</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">&quot;init&quot;</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote add origin git@github.com:wlane/blog-hexo.git</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git push -u origin master</span></span><br></pre></td></tr></table></figure>
 
 <p>最终可以看到仓库内容就是本地生成的目录内容：</p>
-<img src="/2021/05/16/others/%E4%BD%BF%E7%94%A8hexo+github%20page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20210505001730102.png" class="">
+<img src="/2021/05/16/others/%E4%BD%BF%E7%94%A8hexo+github%20page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20210516191700453.png" class="">
+
+<h2 id="6、多终端"><a href="#6、多终端" class="headerlink" title="6、多终端"></a>6、多终端</h2><p>首先在另外一台机器上需要配置好一样的环境，需要安装git和nodejs，nodejs这里必须使用版本v12.22.1, windows版本安装过程略，安装好后：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> node -v</span></span><br><span class="line">v12.22.1</span><br><span class="line"><span class="meta">$</span><span class="bash"> npm -v</span></span><br><span class="line">6.14.12	      </span><br></pre></td></tr></table></figure>
+
+<p>上面npm的版本仍然为旧的版本，需要升级：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install npm@7.12.0 -g</span></span><br></pre></td></tr></table></figure>
+
+<p>之后安装hexo：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -g hexo-cli@4.2.0</span></span><br></pre></td></tr></table></figure>
+
+<p>安装好后，拉取代码仓库：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> git@github.com:wlane/blog-hexo.git</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ll -a</span></span><br><span class="line">total 326K</span><br><span class="line">drwxr-xr-x 1 lane0 lane0    0 May 16 18:36 .</span><br><span class="line">drwxr-xr-x 1 lane0 lane0    0 May 16 18:35 ..</span><br><span class="line">drwxr-xr-x 1 lane0 lane0    0 May 16 18:37 .git</span><br><span class="line">-rw-r--r-- 1 lane0 lane0   33 May 16 18:36 .gitignore</span><br><span class="line">-rw-r--r-- 1 lane0 lane0 2.8K May 16 18:36 _config.yml</span><br><span class="line">-rw-r--r-- 1 lane0 lane0 151K May 16 18:36 debug.log</span><br><span class="line">drwxr-xr-x 1 lane0 lane0    0 May 16 18:36 node_modules</span><br><span class="line">-rw-r--r-- 1 lane0 lane0  655 May 16 18:36 package.json</span><br><span class="line">-rw-r--r-- 1 lane0 lane0 124K May 16 18:36 package-lock.json</span><br><span class="line">drwxr-xr-x 1 lane0 lane0    0 May 16 18:36 scaffolds</span><br><span class="line">drwxr-xr-x 1 lane0 lane0    0 May 16 18:36 source</span><br><span class="line">drwxr-xr-x 1 lane0 lane0    0 May 16 18:36 themes</span><br></pre></td></tr></table></figure>
+
+<p>之后就可以正常编辑，使用hexo d -g 命令部署。</p>
+
 </div>
 
 
